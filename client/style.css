@@ -1,0 +1,31 @@
+* {
+	font-family: Inter !important;
+}
+
+.page-content {
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.flex-grow-1 {
+	flex-grow: 1;
+}
+
+.hidden {
+	display: none !important;
+}
+
+#spinner {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

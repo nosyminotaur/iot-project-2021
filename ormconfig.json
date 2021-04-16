@@ -1,0 +1,15 @@
+{
+	"type": "mysql",
+	"host": "main-db-mysql-bangalore-do-user-7073594-0.db.ondigitalocean.com",
+	"port": 25060,
+	"username": "doadmin",
+	"password": "eeq63fzj07evsbd3",
+	"database": "iot_project",
+	"entities": ["dist/entities/**/*.{ts,js}"],
+	"logging": false,
+	"synchronize": true,
+	"cli": {
+	  "migrationsDir": "migrations"
+	}
+  }
+  
