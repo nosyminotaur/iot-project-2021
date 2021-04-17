@@ -1,4 +1,18 @@
-
+function fetchDeviceStats() {
+	fetch("/api/1/").then(res => res.json()).then(res => {
+		const statusImg = document.getElementById("status-img");
+		const statusTxt = document.getElementById("status");
+		if (res.lastOnlineStatus === "OFFLINE") {
+			statusImg.src = "./offline.svg";
+			statusTxt.textContent = "OFFLINE";
+		} else {
+			statusImg.src = "./online.svg";
+			statusTxt.textContent = "ONLINE";
+		}
+		document.getElementById("temp-value").textContent = res.stats.temperature;
+		document.getElementById("temp-progress").style.width = `${res.stats.temperature}%`;
+	})
+}
 
 function fetchData() {
 	fetch("/api/1/assets").then(res => res.json()).then((res) => {
@@ -56,6 +70,7 @@ function fetchData() {
 window.onload = () => {
 	$("#upload-btn").click(upload);
 	fetchData();
+	fetchDeviceStats();
 }
 
 function upload() {
